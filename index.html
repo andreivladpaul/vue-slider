@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+</head>
+<body>
+    <div id="root" class="container">
+        <div class="slider-wrapper">
+            <!-- PREV -->
+            <div class="prev" @click="prev">
+                <i class="fas fa-angle-left"></i>
+            </div>
+            <!-- IMAGES -->
+            <div class="images">
+                <img :src="images[currentIndex]">
+            </div>
+            <!-- NEXT -->
+            <div class="next" >
+                <i class="fas fa-angle-right"  @click="next"></i>
+            </div>
+
+            <div class="nav">
+                <i :class="(index == currentIndex) ? 'active': null "class="fas fa-circle item" v-for="(image, index) in images"></i>
+                
+            </div>
+        </div>
+
+        
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script type="module" src ="./main.js"></script>
+</body>
+</html>
